@@ -17,7 +17,6 @@ $(document).ready(function() {
       "<li>Vitesse : " + position.coords.speed + "</li>",
       "<li>Timestamp : " + position.timestamp + "</li>"
     ) ;
-	document.getElementById.textContent= position.coords.longitude;
   });
 
   navigator.geolocation.watchPosition(function(position) {
@@ -50,34 +49,32 @@ $(document).ready(function() {
   if(window.DeviceMotionEvent) {
     window.addEventListener('devicemotion', function(orientation) {
       var secondDiv = Exo3.find('.func2') ;
-      setTimeout(function () {
-        secondDiv.find('ul').empty() ;
-        secondDiv.find('ul').append(
-          "<li>Acceleration X : " + orientation.acceleration.x + "</li>",
-          "<li>Acceleration Y : " + orientation.acceleration.y + "</li>",
-          "<li>Acceleration Z : " + orientation.acceleration.z + "</li>",
-          "<li>Rotation alpha : " + orientation.rotationRate.alpha + "</li>",
-          "<li>Rotation beta : " + orientation.rotationRate.beta + "</li>",
-          "<li>Rotation gamma : " + orientation.rotationRate.gamma + "</li>"
-        ) ;
+      secondDiv.find('ul').empty() ;
+      secondDiv.find('ul').append(
+        "<li>Acceleration X : " + orientation.acceleration.x + "</li>",
+        "<li>Acceleration Y : " + orientation.acceleration.y + "</li>",
+        "<li>Acceleration Z : " + orientation.acceleration.z + "</li>",
+        "<li>Rotation alpha : " + orientation.rotationRate.alpha + "</li>",
+        "<li>Rotation beta : " + orientation.rotationRate.beta + "</li>",
+        "<li>Rotation gamma : " + orientation.rotationRate.gamma + "</li>"
+      ) ;
     });
   }
 
-	window.addEventListener('touchstart', touchEventHandler) ;
-	window.addEventListener('touchend', touchEventHandler) ;
-	window.addEventListener('touchcancel', touchEventHandler) ;
-	window.addEventListener('touchleave', touchEventHandler) ;
-	window.addEventListener('touchmove', touchEventHandler) ;
+  window.addEventListener('touchstart', touchEventHandler) ;
+  window.addEventListener('touchend', touchEventHandler) ;
+  window.addEventListener('touchcancel', touchEventHandler) ;
+  window.addEventListener('touchleave', touchEventHandler) ;
+  window.addEventListener('touchmove', touchEventHandler) ;
 
-	}) ;
-
-	function touchEventHandler(event) {
-	  var firstDiv = Exo4.find('div') ;
-	  firstDiv.find('ul').empty() ;
-	  firstDiv.find('ul').append(
-		"<li>Position X : " + event.changedTouches[0].screenX + "</li>",
-		"<li>Position X : " + event.changedTouches[0].screenY + "</li>",
-		"<li>Type event : " + event.type + "</li>"
-	  ) ;
-	}
 }) ;
+
+function touchEventHandler(event) {
+  var firstDiv = Exo4.find('div') ;
+  firstDiv.find('ul').empty() ;
+  firstDiv.find('ul').append(
+    "<li>Position X : " + event.changedTouches[0].screenX + "</li>",
+    "<li>Position X : " + event.changedTouches[0].screenY + "</li>",
+    "<li>Type event : " + event.type + "</li>"
+  ) ;
+}
