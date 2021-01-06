@@ -17,6 +17,7 @@ $(document).ready(function() {
       "<li>Vitesse : " + position.coords.speed + "</li>",
       "<li>Timestamp : " + position.timestamp + "</li>"
     ) ;
+	document.getElementById.textContent= position.coords.longitude;
   });
 
   navigator.geolocation.watchPosition(function(position) {
