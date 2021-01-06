@@ -1,6 +1,6 @@
-let Exo2
-let Exo3
-let Exo4
+let Exo2 ;
+let Exo3 ;
+let Exo4 ;
 
 $(document).ready(function() {
 
